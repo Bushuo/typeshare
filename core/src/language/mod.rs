@@ -21,12 +21,14 @@ use std::{
 
 mod go;
 mod kotlin;
+mod rescript;
 mod scala;
 mod swift;
 mod typescript;
 
 pub use go::Go;
 pub use kotlin::Kotlin;
+pub use rescript::ReScript;
 pub use scala::Scala;
 pub use swift::GenericConstraints;
 pub use swift::Swift;
@@ -100,6 +102,7 @@ pub enum SupportedLanguage {
     Scala,
     Swift,
     TypeScript,
+    ReScript,
 }
 
 impl SupportedLanguage {
@@ -117,6 +120,7 @@ impl SupportedLanguage {
             SupportedLanguage::Scala => "scala",
             SupportedLanguage::Swift => "swift",
             SupportedLanguage::TypeScript => "ts",
+            SupportedLanguage::ReScript => "res",
         }
     }
 }
@@ -131,6 +135,7 @@ impl FromStr for SupportedLanguage {
             "scala" => Ok(Self::Scala),
             "swift" => Ok(Self::Swift),
             "typescript" => Ok(Self::TypeScript),
+            "rescript" => Ok(Self::ReScript),
             _ => Err(ParseError::UnsupportedLanguage(s.into())),
         }
     }

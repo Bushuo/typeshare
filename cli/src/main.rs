@@ -18,7 +18,7 @@ use std::collections::{BTreeMap, HashMap};
 use typeshare_core::language::Go;
 use typeshare_core::{
     language::{
-        CrateName, GenericConstraints, Kotlin, Language, Scala, SupportedLanguage, Swift,
+        CrateName, GenericConstraints, Kotlin, Language, ReScript, Scala, SupportedLanguage, Swift,
         TypeScript,
     },
     parser::ParsedData,
@@ -178,6 +178,10 @@ fn language(
             ..Default::default()
         }),
         SupportedLanguage::TypeScript => Box::new(TypeScript {
+            type_mappings: config.typescript.type_mappings,
+            ..Default::default()
+        }),
+        SupportedLanguage::ReScript => Box::new(ReScript {
             type_mappings: config.typescript.type_mappings,
             ..Default::default()
         }),

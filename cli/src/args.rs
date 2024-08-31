@@ -23,7 +23,7 @@ pub const ARG_TARGET_OS: &str = "target_os";
 const AVAILABLE_LANGUAGES: [&str; 5] = ["kotlin", "scala", "swift", "typescript", "go"];
 
 #[cfg(not(feature = "go"))]
-const AVAILABLE_LANGUAGES: [&str; 4] = ["kotlin", "scala", "swift", "typescript"];
+const AVAILABLE_LANGUAGES: [&str; 5] = ["kotlin", "scala", "swift", "typescript", "rescript"];
 
 /// Parse command line arguments.
 pub(crate) fn build_command() -> Command<'static> {

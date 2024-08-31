@@ -4,6 +4,9 @@
 [typescript.type_mappings]
 "DateTime" = "string"
 
+[rescript.type_mappings]
+"DateTime" = "string"
+
 [kotlin.type_mappings]
 "DateTime" = "String"
 
