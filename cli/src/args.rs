@@ -8,6 +8,7 @@ pub enum AvailableLanguage {
     Scala,
     Swift,
     Typescript,
+    ReScript,
     #[cfg(feature = "go")]
     Go,
     #[cfg(feature = "python")]

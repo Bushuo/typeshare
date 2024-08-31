@@ -91,6 +91,7 @@ fn generate_types(config_file: Option<&Path>, options: &Args) -> anyhow::Result<
             args::AvailableLanguage::Scala => SupportedLanguage::Scala,
             args::AvailableLanguage::Swift => SupportedLanguage::Swift,
             args::AvailableLanguage::Typescript => SupportedLanguage::TypeScript,
+            args::AvailableLanguage::ReScript => SupportedLanguage::ReScript,
             #[cfg(feature = "go")]
             args::AvailableLanguage::Go => SupportedLanguage::Go,
             #[cfg(feature = "python")]
@@ -210,6 +211,11 @@ fn language(
         }),
         SupportedLanguage::TypeScript => Box::new(TypeScript {
             type_mappings: config.typescript.type_mappings,
+            ..Default::default()
+        }),
+        SupportedLanguage::ReScript => Box::new(ReScript {
+            type_mappings: config.rescript.type_mappings,
+            gen_type: config.rescript.gentype,
             ..Default::default()
         }),
         #[cfg(feature = "go")]

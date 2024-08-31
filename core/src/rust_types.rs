@@ -545,6 +545,8 @@ pub enum RustTypeFormatError {
     GenericKeyForbiddenInTS(String),
     #[error("The special type `{0}` is not supported in this language")]
     UnsupportedSpecialType(String),
+    #[error("Generic type `{0}` cannot be used as a map key in Rescript")]
+    GenericKeyForbiddenInRescript(String),
 }
 
 impl SpecialRustType {

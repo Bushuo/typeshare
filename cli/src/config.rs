@@ -54,6 +54,13 @@ pub struct TypeScriptParams {
 
 #[derive(Default, Serialize, Deserialize, PartialEq, Eq, Debug)]
 #[serde(default)]
+pub struct RescriptParams {
+    pub type_mappings: HashMap<String, String>,
+    pub gentype: bool,
+}
+
+#[derive(Default, Serialize, Deserialize, PartialEq, Eq, Debug)]
+#[serde(default)]
 #[cfg(feature = "go")]
 pub struct GoParams {
     pub package: String,
@@ -69,6 +76,7 @@ pub struct GoParams {
 pub(crate) struct Config {
     pub swift: SwiftParams,
     pub typescript: TypeScriptParams,
+    pub rescript: RescriptParams,
     pub kotlin: KotlinParams,
     pub scala: ScalaParams,
     #[cfg(feature = "python")]
